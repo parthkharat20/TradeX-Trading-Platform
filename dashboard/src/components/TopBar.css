@@ -1,0 +1,350 @@
+/* TopBar - Zerodha Theme */
+.topbar-container {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    background: white;
+    box-sizing: border-box;
+    z-index: 9;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  
+  /* Logo Section */
+  .topbar-logo {
+    padding-right: 20px;
+    border-right: 1px solid rgb(235, 234, 234);
+  }
+  
+  .logo-icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .app-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgb(71, 71, 71);
+    letter-spacing: -0.5px;
+  }
+  
+  .market-status {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Indices Section */
+  .indices-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 0 20px;
+    overflow-x: auto;
+  }
+  
+  .index-item {
+    min-width: 140px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .index-item:hover {
+    transform: translateY(-2px);
+  }
+  
+  .index-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgb(136, 136, 136);
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+    letter-spacing: 0.3px;
+  }
+  
+  .index-data {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  
+  .index-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0;
+  }
+  
+  .index-change {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .index-change.up {
+    color: rgb(72, 194, 55);
+  }
+  
+  .index-change.down {
+    color: rgb(250, 118, 78);
+  }
+  
+  /* Right Section */
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+    border-left: 1px solid rgb(235, 234, 234);
+  }
+  
+  /* Funds Widget */
+  .funds-widget {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, rgba(72, 194, 55, 0.08) 0%, rgba(72, 194, 55, 0.12) 100%);
+    border: 1px solid rgba(72, 194, 55, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .funds-widget:hover {
+    background: linear-gradient(135deg, rgba(72, 194, 55, 0.12) 0%, rgba(72, 194, 55, 0.16) 100%);
+    border-color: rgba(72, 194, 55, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(72, 194, 55, 0.15);
+  }
+  
+  .funds-icon {
+    display: flex;
+    align-items: center;
+    color: rgb(72, 194, 55);
+  }
+  
+  .funds-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .funds-label {
+    font-size: 0.7rem;
+    color: rgb(136, 136, 136);
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .funds-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(72, 194, 55);
+    margin: 0;
+  }
+  
+  .add-funds-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background: white;
+    border-radius: 50%;
+    color: rgb(72, 194, 55);
+    transition: all 0.2s;
+  }
+  
+  .add-funds-btn:hover {
+    background: rgb(72, 194, 55);
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  /* P&L Widget */
+  .pnl-widget {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(76, 175, 80, 0.08);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    border-radius: 8px;
+  }
+  
+  .pnl-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .pnl-label {
+    font-size: 0.7rem;
+    color: rgb(136, 136, 136);
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .pnl-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .pnl-value.profit {
+    color: rgb(72, 194, 55);
+  }
+  
+  .pnl-value.loss {
+    color: rgb(250, 118, 78);
+  }
+  
+  /* Notifications */
+  .notifications-container {
+    position: relative;
+  }
+  
+  .notifications-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(136, 136, 136);
+    border-radius: 8px;
+    transition: all 0.2s;
+    position: relative;
+  }
+  
+  .notifications-btn:hover {
+    background: rgb(248, 249, 250);
+    color: rgb(71, 71, 71);
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgb(244, 67, 54);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 10px;
+    min-width: 16px;
+    text-align: center;
+  }
+  
+  .notifications-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    width: 320px;
+    background: white;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+  }
+  
+  .notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgb(235, 234, 234);
+  }
+  
+  .notifications-header h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0;
+  }
+  
+  .notifications-header button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: rgb(136, 136, 136);
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .notifications-body {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .no-notifications {
+    padding: 40px 20px;
+    text-align: center;
+    color: rgb(153, 153, 153);
+    font-size: 0.85rem;
+  }
+  
+  .notification-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgb(243, 242, 242);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .notification-item:hover {
+    background: rgb(248, 249, 250);
+  }
+  
+  .notification-item:last-child {
+    border-bottom: none;
+  }
+  
+  .notification-item p {
+    font-size: 0.85rem;
+    color: rgb(71, 71, 71);
+    margin: 0 0 4px 0;
+  }
+  
+  .notification-item span {
+    font-size: 0.7rem;
+    color: rgb(153, 153, 153);
+  }
+  
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .indices-container {
+      gap: 15px;
+    }
+  
+    .index-item {
+      min-width: 120px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .pnl-widget {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .topbar-logo .logo-text {
+      display: none;
+    }
+  }

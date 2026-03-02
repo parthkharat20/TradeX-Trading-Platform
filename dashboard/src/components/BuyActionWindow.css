@@ -219,3 +219,16 @@
     color: #fff;
   }
   
+  /* Order Type Selector in Buy Window */
+#buy-window .order-type-selector {
+  background: rgb(248, 249, 250);
+  padding: 12px;
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+
+#buy-window .tab-btn.active {
+  background: #4184f3;
+  color: white;
+  border-color: #4184f3;
+}

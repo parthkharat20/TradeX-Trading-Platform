@@ -1,6 +1,10 @@
 const { Schema } = require("mongoose");
 
 const PositionsSchema = new Schema({
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "user"
+  },
   product: String,
   name: String,
   qty: Number,
@@ -9,6 +13,8 @@ const PositionsSchema = new Schema({
   net: String,
   day: String,
   isLoss: Boolean,
+}, {
+  timestamps: true
 });
 
 module.exports = { PositionsSchema };

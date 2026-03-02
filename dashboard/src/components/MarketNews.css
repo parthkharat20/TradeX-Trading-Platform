@@ -1,0 +1,183 @@
+/* Market News - Zerodha Theme */
+.market-news-page {
+    padding: 20px;
+  }
+  
+  .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .news-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0;
+  }
+  
+  /* Filters */
+  .news-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    padding: 8px 16px;
+    border: 1px solid rgb(224, 224, 224);
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgb(71, 71, 71);
+    transition: all 0.2s;
+  }
+  
+  .filter-btn:hover {
+    background: rgb(248, 249, 250);
+  }
+  
+  .filter-btn.active {
+    background: rgb(65, 132, 243);
+    color: white;
+    border-color: rgb(65, 132, 243);
+  }
+  
+  /* Market Summary */
+  .market-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .summary-card {
+    background: white;
+    border: 1px solid rgb(235, 234, 234);
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .summary-card h4 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgb(136, 136, 136);
+    margin: 0 0 8px 0;
+  }
+  
+  .summary-card p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .summary-card.positive p {
+    color: rgb(72, 194, 55);
+  }
+  
+  .summary-card.negative p {
+    color: rgb(250, 118, 78);
+  }
+  
+  /* News Feed */
+  .news-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .news-card {
+    background: white;
+    border: 1px solid rgb(235, 234, 234);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    transition: all 0.2s;
+  }
+  
+  .news-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .news-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+  
+  .news-content {
+    flex: 1;
+  }
+  
+  .news-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .news-source {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgb(65, 132, 243);
+  }
+  
+  .news-time {
+    font-size: 0.75rem;
+    color: rgb(153, 153, 153);
+  }
+  
+  .news-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+  }
+  
+  .news-excerpt {
+    font-size: 0.85rem;
+    color: rgb(136, 136, 136);
+    line-height: 1.5;
+    margin: 0 0 12px 0;
+  }
+  
+  .news-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .news-action-btn {
+    background: transparent;
+    border: 1px solid rgb(224, 224, 224);
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: rgb(71, 71, 71);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s;
+  }
+  
+  .news-action-btn:hover {
+    background: rgb(248, 249, 250);
+    border-color: rgb(65, 132, 243);
+    color: rgb(65, 132, 243);
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .market-summary {
+      grid-template-columns: 1fr;
+    }
+  
+    .news-card {
+      flex-direction: column;
+    }
+  }

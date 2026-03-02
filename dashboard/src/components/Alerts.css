@@ -1,0 +1,175 @@
+/* Alerts Page - Zerodha Theme */
+
+.alerts-container {
+    width: 100%;
+  }
+  
+  .alerts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .no-alerts {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .no-alerts p {
+    color: rgb(153, 153, 153);
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .alerts-table {
+    background: white;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid rgb(235, 234, 234);
+  }
+  
+  .alerts-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .alerts-table thead {
+    background: rgb(248, 249, 250);
+  }
+  
+  .alerts-table th {
+    text-align: left;
+    padding: 15px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgb(145, 145, 145);
+    border-bottom: 1px solid rgb(235, 234, 234);
+  }
+  
+  .alerts-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid rgb(243, 242, 242);
+    font-size: 0.85rem;
+    color: rgb(73, 73, 73);
+  }
+  
+  .alerts-table tr:hover {
+    background: rgb(248, 249, 250);
+  }
+  
+  /* Alert Type Badge */
+  .alert-type {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .alert-type.above {
+    background: rgba(72, 194, 55, 0.1);
+    color: rgb(72, 194, 55);
+  }
+  
+  .alert-type.below {
+    background: rgba(250, 118, 78, 0.1);
+    color: rgb(250, 118, 78);
+  }
+  
+  /* Alert Status Badge */
+  .alert-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 2px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .alert-status.active {
+    background: rgba(72, 194, 55, 0.1);
+    color: rgb(72, 194, 55);
+  }
+  
+  .alert-status.inactive {
+    background: rgba(224, 224, 224, 0.5);
+    color: rgb(136, 136, 136);
+  }
+  
+  .alert-status.triggered {
+    background: rgba(65, 132, 243, 0.1);
+    color: rgb(65, 132, 243);
+  }
+  
+  /* Alert Actions */
+  .alert-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .action-btn {
+    background: transparent;
+    border: 1px solid rgb(224, 224, 224);
+    padding: 4px 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  
+  .action-btn:hover {
+    background: rgb(248, 249, 250);
+  }
+  
+  .action-btn.delete:hover {
+    background: rgba(250, 118, 78, 0.1);
+    border-color: rgb(250, 118, 78);
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgb(71, 71, 71);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 2px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: rgb(65, 132, 243);
+  }
+  
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: rgb(73, 73, 73);
+    cursor: pointer;
+    font-weight: 400;
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+  }

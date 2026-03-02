@@ -6,6 +6,7 @@ import Register from "./Register";
 import PrivateRoute from "./PrivateRoute";
 import TopBar from "./TopBar";
 import Dashboard from "./Dashboard";
+import Menu from "./Menu";
 
 const Home = () => {
   return (
@@ -14,20 +15,21 @@ const Home = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Protected route — TopBar + Dashboard sirf logged in user dekh sakta hai */}
+      {/* Protected route - Full Dashboard Layout */}
       <Route
         path="/dashboard/*"
         element={
           <PrivateRoute>
-            <>
+            <div className="app-container">
               <TopBar />
+              <Menu />
               <Dashboard />
-            </>
+            </div>
           </PrivateRoute>
         }
       />
 
-      {/* Default — koi bhi route nahi match hota toh Login pe redirect */}
+      {/* Default redirect */}
       <Route path="/" element={<Navigate to="/login" />} />
     </Routes>
   );

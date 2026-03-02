@@ -1,0 +1,270 @@
+/* Portfolio Analytics - Zerodha Theme */
+.portfolio-page {
+    padding: 20px;
+  }
+  
+  .portfolio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .portfolio-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0;
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Loading */
+  .portfolio-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 20px;
+  }
+  
+  .portfolio-loading p {
+    color: rgb(136, 136, 136);
+    font-size: 0.95rem;
+  }
+  
+  /* Metrics Grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .metric-card {
+    background: white;
+    border: 1px solid rgb(235, 234, 234);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .metric-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .metric-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .metric-label {
+    font-size: 0.8rem;
+    color: rgb(136, 136, 136);
+    font-weight: 500;
+  }
+  
+  .metric-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgb(71, 71, 71);
+  }
+  
+  .metric-value.profit {
+    color: rgb(72, 194, 55);
+  }
+  
+  .metric-value.loss {
+    color: rgb(250, 118, 78);
+  }
+  
+  /* Timeframe Selector */
+  .timeframe-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(235, 234, 234);
+  }
+  
+  .tf-btn {
+    padding: 8px 16px;
+    border: 1px solid rgb(224, 224, 224);
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgb(136, 136, 136);
+    transition: all 0.2s;
+  }
+  
+  .tf-btn:hover {
+    background: rgb(248, 249, 250);
+  }
+  
+  .tf-btn.active {
+    background: rgb(65, 132, 243);
+    color: white;
+    border-color: rgb(65, 132, 243);
+  }
+  
+  /* Chart Section */
+  .chart-section {
+    background: white;
+    border: 1px solid rgb(235, 234, 234);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(235, 234, 234);
+  }
+  
+  .chart-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .chart-type-selector {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .chart-type-selector button {
+    padding: 6px 12px;
+    border: 1px solid rgb(224, 224, 224);
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgb(136, 136, 136);
+    transition: all 0.2s;
+  }
+  
+  .chart-type-selector button:hover {
+    background: rgb(248, 249, 250);
+  }
+  
+  .chart-type-selector button.active {
+    background: rgb(65, 132, 243);
+    color: white;
+    border-color: rgb(65, 132, 243);
+  }
+  
+  .chart-container {
+    height: 400px;
+    position: relative;
+  }
+  
+  .chart-container.small {
+    height: 300px;
+  }
+  
+  /* Secondary Charts */
+  .secondary-charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Performance Summary */
+  .performance-summary {
+    background: white;
+    border: 1px solid rgb(235, 234, 234);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .performance-summary h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(235, 234, 234);
+  }
+  
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .summary-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .summary-label {
+    font-size: 0.8rem;
+    color: rgb(136, 136, 136);
+    font-weight: 500;
+  }
+  
+  .summary-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+  }
+  
+  .summary-value.profit {
+    color: rgb(72, 194, 55);
+  }
+  
+  .summary-value.loss {
+    color: rgb(250, 118, 78);
+  }
+  
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .metrics-grid,
+    .summary-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .secondary-charts {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .metrics-grid,
+    .summary-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .timeframe-selector {
+      overflow-x: auto;
+    }
+  }

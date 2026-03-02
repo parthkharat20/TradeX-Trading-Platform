@@ -1,0 +1,264 @@
+/* Trade Calculator - Zerodha Theme */
+.trade-calculator-page {
+    padding: 20px;
+    min-height: calc(100vh - 10vh - 60px);
+  }
+  
+  .calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .calculator-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .funds-display {
+    background: rgba(72, 194, 55, 0.1);
+    border: 1px solid rgba(72, 194, 55, 0.3);
+    padding: 10px 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .funds-label {
+    font-size: 0.8rem;
+    color: rgb(136, 136, 136);
+    font-weight: 500;
+  }
+  
+  .funds-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(72, 194, 55);
+  }
+  
+  /* Calculator Container */
+  .calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* Form */
+  .calculator-form {
+    background: white;
+    border: 1px solid rgb(235, 234, 234);
+    border-radius: 8px;
+    padding: 30px;
+  }
+  
+  .calculator-form h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(235, 234, 234);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin-bottom: 8px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgb(71, 71, 71);
+    box-sizing: border-box;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: rgb(65, 132, 243);
+    box-shadow: 0 0 0 3px rgba(65, 132, 243, 0.1);
+  }
+  
+  /* Trade Type Buttons */
+  .trade-type-btns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .trade-type-btns button {
+    padding: 12px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  
+  .trade-type-btns button.buy.active {
+    background: rgb(65, 132, 243);
+    color: white;
+    border-color: rgb(65, 132, 243);
+  }
+  
+  .trade-type-btns button.sell.active {
+    background: rgb(255, 87, 34);
+    color: white;
+    border-color: rgb(255, 87, 34);
+  }
+  
+  .calculate-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Result Display */
+  .calculator-result {
+    background: white;
+    border: 1px solid rgb(235, 234, 234);
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .calculator-result h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+    margin: 0 0 10px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(235, 234, 234);
+  }
+  
+  /* Affordability Alert */
+  .affordability-alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .affordability-alert.success {
+    background: rgba(72, 194, 55, 0.1);
+    border: 1px solid rgba(72, 194, 55, 0.3);
+    color: rgb(72, 194, 55);
+  }
+  
+  .affordability-alert.error {
+    background: rgba(250, 118, 78, 0.1);
+    border: 1px solid rgba(250, 118, 78, 0.3);
+    color: rgb(250, 118, 78);
+  }
+  
+  /* Result Rows */
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgb(243, 242, 242);
+    font-size: 0.9rem;
+  }
+  
+  .result-row span:first-child {
+    color: rgb(136, 136, 136);
+  }
+  
+  .result-row .value {
+    font-weight: 600;
+    color: rgb(71, 71, 71);
+  }
+  
+  .result-row.profit-row {
+    background: rgba(72, 194, 55, 0.05);
+    padding: 12px;
+    border-radius: 6px;
+  }
+  
+  .result-row.loss-row {
+    background: rgba(250, 118, 78, 0.05);
+    padding: 12px;
+    border-radius: 6px;
+  }
+  
+  .result-row .profit {
+    color: rgb(72, 194, 55);
+  }
+  
+  .result-row .loss {
+    color: rgb(250, 118, 78);
+  }
+  
+  /* Charges Section */
+  .charges-section {
+    background: rgb(248, 249, 250);
+    padding: 15px;
+    border-radius: 6px;
+  }
+  
+  .charges-section .result-row {
+    padding: 8px 0;
+    font-size: 0.85rem;
+  }
+  
+  .charges-section .result-row.total {
+    border-top: 2px solid rgb(224, 224, 224);
+    padding-top: 12px;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+  
+  /* Net Profit */
+  .net-profit {
+    background: linear-gradient(135deg, rgba(65, 132, 243, 0.08) 0%, rgba(65, 132, 243, 0.12) 100%);
+    border: 1px solid rgba(65, 132, 243, 0.2);
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .net-profit .value {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .calculator-container {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -1,0 +1,142 @@
+/* Funds Page - Zerodha Theme */
+
+.funds-header {
+    width: 100%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .funds-header p {
+    font-size: 0.8rem;
+    color: rgb(179, 179, 179);
+    margin-right: 8px;
+  }
+  
+  .funds-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .funds-summary-card {
+    border: 1px solid rgb(235, 234, 234);
+    padding: 20px;
+    border-radius: 2px;
+    background: #fff;
+  }
+  
+  .funds-summary-card h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(71, 71, 71);
+    margin-bottom: 20px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgb(243, 242, 242);
+    font-size: 0.85rem;
+  }
+  
+  .summary-item:last-child {
+    border-bottom: none;
+  }
+  
+  .summary-item span:first-child {
+    color: rgb(136, 136, 136);
+  }
+  
+  .summary-item .amount {
+    font-weight: 500;
+    color: rgb(71, 71, 71);
+    font-size: 0.95rem;
+  }
+  
+  .summary-item .amount.used {
+    color: rgb(250, 118, 78);
+  }
+  
+  .summary-item .amount.available {
+    color: rgb(72, 194, 55);
+  }
+  
+  /* Modal Styles - Zerodha Theme */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 2px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .modal-content h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgb(71, 71, 71);
+    margin-bottom: 20px;
+  }
+  
+  .modal-body {
+    margin-bottom: 20px;
+  }
+  
+  .modal-body label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgb(136, 136, 136);
+    margin-bottom: 8px;
+  }
+  
+  .modal-body input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 2px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+  }
+  
+  .modal-body input:focus {
+    outline: none;
+    border-color: rgb(65, 132, 243);
+  }
+  
+  .available-info {
+    font-size: 0.8rem;
+    color: rgb(72, 194, 55);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .btn-grey {
+    background: rgb(224, 224, 224);
+    color: rgb(70, 70, 70);
+  }
+  
+  .btn-grey:hover {
+    background: rgb(200, 200, 200);
+  }

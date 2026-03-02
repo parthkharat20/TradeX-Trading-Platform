@@ -1,92 +1,126 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  Dashboard as DashboardIcon,
+  Receipt,
+  BusinessCenter,
+  TrendingUp,
+  AccountBalanceWallet,
+  Notifications,
+  Apps,
+  Settings,
+  Logout,
+  Person,
+  ExpandMore,
+  Assessment,
+  Description,
+  Calculate,
+  CompareArrows,
+  Book,
+  Newspaper,
+} from "@mui/icons-material";
+import "./Menu.css";
 
 const Menu = () => {
-  const [selectedMenu, setSelectedMenu] = useState(0);
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const location = useLocation();
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [userName, setUserName] = useState("");
 
-  const menuClass = "menu";
-  const activeMenuClass = "menu active";
-
-  const handleMenuClick = (index) => {
-    setSelectedMenu(index);
-  };
-
-  const handleProfileClick = () => {
-    setIsProfileDropdownOpen(!isProfileDropdownOpen);
-  };
+  useEffect(() => {
+    const name = localStorage.getItem("userName") || "User";
+    setUserName(name);
+  }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userName");
-    window.location.href = "/login";
+    if (window.confirm("Are you sure you want to logout?")) {
+      localStorage.removeItem("token");
+      localStorage.removeItem("userName");
+      window.location.href = "/login";
+    }
+  };
+
+  const menuItems = [
+    { path: "/dashboard", icon: <DashboardIcon />, label: "Dashboard" },
+    { path: "/dashboard/orders", icon: <Receipt />, label: "Orders" },
+    { path: "/dashboard/holdings", icon: <BusinessCenter />, label: "Holdings" },
+    { path: "/dashboard/positions", icon: <TrendingUp />, label: "Positions" },
+    { path: "/dashboard/funds", icon: <AccountBalanceWallet />, label: "Funds" },
+    { path: "/dashboard/alerts", icon: <Notifications />, label: "Alerts" },
+    { path: "/dashboard/portfolio", icon: <Assessment />, label: "Portfolio" },
+    { path: "/dashboard/reports", icon: <Description />, label: "Reports" },
+    { path: "/dashboard/calculator", icon: <Calculate />, label: "Calculator" },
+    { path: "/dashboard/compare", icon: <CompareArrows />, label: "Compare" },
+    { path: "/dashboard/journal", icon: <Book />, label: "Journal" },
+    { path: "/dashboard/news", icon: <Newspaper />, label: "News" },
+    { path: "/dashboard/apps", icon: <Apps />, label: "Apps" },
+  ];
+
+  const isActive = (path) => {
+    if (path === "/dashboard") {
+      return location.pathname === "/dashboard";
+    }
+    return location.pathname.startsWith(path);
   };
 
   return (
-    <div className="menu-container">
-      <img src="/logo.png" alt="logo" style={{ width: "50px" }} />
+    <div className="menu-sidebar">
+      {/* Logo */}
+      <div className="menu-logo">
+        <Link to="/dashboard" style={{ textDecoration: "none" }}>
+          <div className="logo-container">
+            <div className="logo-icon">📈</div>
+            <span className="logo-text">TradePro</span>
+          </div>
+        </Link>
+      </div>
 
-      <div className="menus">
-        <ul>
-          <li>
-            <Link to="/dashboard" style={{textDecoration: "none"}} onClick={() => handleMenuClick(0)}>
-              <p className={selectedMenu === 0 ? activeMenuClass : menuClass}>
-                Dashboard
-              </p>
-            </Link>
-          </li>
+      {/* Menu Items */}
+      <nav className="menu-nav">
+        {menuItems.map((item, index) => (
+          <Link
+            key={index}
+            to={item.path}
+            className={`menu-item ${isActive(item.path) ? "active" : ""}`}
+            style={{ textDecoration: "none" }}
+          >
+            <span className="menu-icon">{item.icon}</span>
+            <span className="menu-label">{item.label}</span>
+            {isActive(item.path) && <div className="active-indicator" />}
+          </Link>
+        ))}
+      </nav>
 
-          <li>
-            <Link to="/dashboard/orders" style={{textDecoration: "none"}} onClick={() => handleMenuClick(1)}>
-              <p className={selectedMenu === 1 ? activeMenuClass : menuClass}>
-                Orders
-              </p>
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/dashboard/holdings" style={{textDecoration: "none"}} onClick={() => handleMenuClick(2)}>
-              <p className={selectedMenu === 2 ? activeMenuClass : menuClass}>
-                Holdings
-              </p>
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/dashboard/positions" style={{textDecoration: "none"}} onClick={() => handleMenuClick(3)}>
-              <p className={selectedMenu === 3 ? activeMenuClass : menuClass}>
-                Positions
-              </p>
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/dashboard/funds" style={{textDecoration: "none"}} onClick={() => handleMenuClick(4)}>
-              <p className={selectedMenu === 4 ? activeMenuClass : menuClass}>
-                Funds
-              </p>
-            </Link>
-          </li>
-
-          <li>
-            <Link to="/dashboard/apps" style={{textDecoration: "none"}} onClick={() => handleMenuClick(5)}>
-              <p className={selectedMenu === 5 ? activeMenuClass : menuClass}>
-                Apps
-              </p>
-            </Link>
-          </li>
-        </ul>
-
-        <hr />
-
-        <div className="profile" style={{textDecoration: "none"}} onClick={handleProfileClick}>
-          <div className="avatar">{localStorage.getItem("userName")?.substring(0, 2).toUpperCase() || "ZU"}</div>
-          <p className="username">{localStorage.getItem("userName") || "USERID"}</p>
+      {/* Profile Section */}
+      <div className="menu-profile">
+        <div
+          className="profile-trigger"
+          onClick={() => setIsProfileOpen(!isProfileOpen)}
+        >
+          <div className="profile-avatar">
+            {userName.substring(0, 2).toUpperCase()}
+          </div>
+          <div className="profile-info">
+            <span className="profile-name">{userName}</span>
+            <span className="profile-email">view profile</span>
+          </div>
+          <ExpandMore className={`profile-arrow ${isProfileOpen ? "open" : ""}`} />
         </div>
 
-        {isProfileDropdownOpen && (
-          <div className="profile-dropdown">
-            <button onClick={handleLogout}>Logout</button>
+        {isProfileOpen && (
+          <div className="profile-dropdown-menu">
+            <Link to="/dashboard/profile" className="dropdown-item">
+              <Person style={{ fontSize: "1.1rem" }} />
+              <span>My Profile</span>
+            </Link>
+            <Link to="/dashboard/settings" className="dropdown-item">
+              <Settings style={{ fontSize: "1.1rem" }} />
+              <span>Settings</span>
+            </Link>
+            <div className="dropdown-divider" />
+            <button className="dropdown-item logout-btn" onClick={handleLogout}>
+              <Logout style={{ fontSize: "1.1rem" }} />
+              <span>Logout</span>
+            </button>
           </div>
         )}
       </div>

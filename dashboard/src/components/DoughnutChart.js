@@ -7,3 +7,5 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 export function DoughnutChart({ data }) {
   return <Doughnut data={data} />;
 }
+
+
