@@ -27,8 +27,8 @@ app.use(bodyParser.json());
 
 app.post("/register", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    if (!name || !email || !password)
+    const { userName, email, password } = req.body;
+    if (!userName || !email || !password)
       return res.status(400).json({ message: "All fields required" });
 
     const existingUser = await UserModel.findOne({ email });
@@ -36,7 +36,7 @@ app.post("/register", async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new UserModel({ name, email, password: hashedPassword });
+    const newUser = new UserModel({ userName, email, password: hashedPassword });
     await newUser.save();
 
     // Create initial funds account
@@ -48,7 +48,19 @@ app.post("/register", async (req, res) => {
     });
     await newFunds.save();
 
-    res.status(201).json({ message: "User registered successfully ✅" });
+    // Generate JWT token
+    const token = jwt.sign(
+      { userId: newUser._id.toString(), email: newUser.email, userName: newUser.userName },
+      JWT_SECRET || "tradex-secret-key-2024",
+      { expiresIn: "7d" }
+    );
+
+    res.status(201).json({
+      message: "User registered successfully ✅",
+      token,
+      userName: newUser.userName,
+      userId: newUser._id,
+    });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -75,7 +87,7 @@ app.post("/login", async (req, res) => {
     res.status(200).json({ 
       message: "Login successful ✅", 
       token, 
-      name: user.name,
+      userName: user.userName,
       userId: user._id 
     });
   } catch (err) {
